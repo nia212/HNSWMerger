@@ -1,0 +1,24 @@
+# Dataset configuration for HNSW experiment
+workload_type = SIFT10M
+merge_method = TWO_MERGE
+multi_test_method = LARGE_FIRST
+dim = 128
+max_elements = 10000000
+nb = 10000000
+M = 32
+ef_construction = 64
+k = 100
+kk = 1000
+nq = 10000
+iterations = 1
+lrange = 5000000
+rrange = 10000000
+rerun = true
+save_index = true
+
+base_filepath = [SIFT10M Dataset Path]
+query_filepath = [SIFT10M Query Path]
+groundtruth_filepath = [SIFT10M Groundtruth Path]
+index_path = [HNSW Index Saved Path]
+
+efs_array = 100, 200, 300, 400, 500

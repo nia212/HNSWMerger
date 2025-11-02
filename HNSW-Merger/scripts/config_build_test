@@ -1,0 +1,11 @@
+# Dataset configuration for HNSW index construction
+dim = 128
+max_elements = 10000000
+nb = 10000000
+M = 32
+ef_construction = 64
+lrange = 0
+rrange = 1000000
+
+base_filepath = [SIFT10M Dataset Path]
+index_path = [HNSW Index Save Path]
