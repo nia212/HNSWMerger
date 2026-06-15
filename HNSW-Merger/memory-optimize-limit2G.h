@@ -676,7 +676,7 @@ public:
             char *temp_data = (char *)malloc(data_size_);
             load_graph_data(file_path, index_offset_list0 + internal_id * size_data_per_element_, size_data_per_element_, data_size_, offsetData_, 1, temp_data);
             data_.push_back(temp_data, internal_id);
-            delete temp_data;
+            free(temp_data);
             return data_[internal_id];
         }
     }
@@ -1597,8 +1597,8 @@ void HNSWMerger_ME(const std::string &location_index1, const std::string &locati
             index1->data_.release();
             index2->data_.release();
         }
-        delete ll_new;
-        delete dist_new;
+        free(ll_new);
+        free(dist_new);
         index2->clear_linklist(level);
         printf("level=%d, time for setting links: %.3f s [total cost %.3f s]\n", level, sw3.getElapsedTimeMicro() / 1000000, elapsed() - s0);
     }
